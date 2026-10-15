@@ -9,6 +9,13 @@ kecepatan : dict[str, int] = {
     "J" : 0
 }
 
+def buat_dimensi(M : int = 0, L : int = 0, T : int = 0, I : int = 0, theta : int = 0, N : int = 0, J : int = 0) -> dict[str, int] :
+    return {"M": M, "L": L, "T": T, "I": I, "Θ": theta, "N": N, "J": J}
+
+kecepatan_baru : dict[str, int] = buat_dimensi(L=1, T=-1)
+print("Kecepatan Baru")
+print(kecepatan_baru)
+
 def kali(a : dict[str, int], b :dict[str, int]) -> dict[str, int] :
     hasil : dict[str, int] = {}
     for simbol in DIMENSI_DASAR :
