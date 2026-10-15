@@ -27,10 +27,28 @@ def bagi (a : dict[str, int], b: dict[str, int]) -> dict[str, int] :
     hasil : dict[str, int] = {}
     for simbol in DIMENSI_DASAR :
         hasil[simbol] = a[simbol] - b[simbol]
-        print(simbol)
     return hasil
 
 waktu : dict[str, int] = {"M": 0, "L": 0, "T": 1, "I": 0, "Θ": 0, "N": 0, "J": 0}
 
 print("Pembagian")
 print(bagi(kecepatan, waktu))
+
+def pangkat(a : dict[str, int], n : int ) -> dict[str, int]:
+    hasil : dict[str, int] = {}
+    for simbol in DIMENSI_DASAR :
+        hasil[simbol] = a[simbol] * n
+    return hasil
+
+
+panjang : dict[str, int] = {"M": 0, "L": 1, "T": 0, "I": 0, "Θ": 0, "N": 0, "J": 0}
+print("Pangkat")
+print(pangkat(panjang, 2))
+         
+# Volume
+print("Volume")
+print(pangkat(panjang, 3))
+
+# Energi Kinetik
+print("Energi")
+print(kali(massa, pangkat(kecepatan, 2)))
